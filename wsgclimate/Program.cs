@@ -1,9 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using wsgclimate.DataContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Data>(options =>
+{
 
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EFConnection"));
+});
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
