@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using wsgclimate.DataContext;
+using wsgclimate.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddDbContext<Data>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("EFConnection"));
 });
+
 var app = builder.Build();
 
 

@@ -1,0 +1,29 @@
+﻿@model IQueryable<RoomModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nazwa</th>
+      <th scope="col">Metry</th>
+      <th scope="col">Miejsca</th>
+            <th scope="col">Wilgotnosc</th>
+                  <th scope="col">Temp</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach(var item in Model){
+    <tr>
+      <th scope="row">1</th>
+      <td>@item.Name</td>
+      <td>@item.SquareMeters</td>
+      <td>@item.SeatedPlaces</td>
+      <td>@item.MaxHumidity</td>
+      <td>@item.MaxTemperature</td>
+    </tr>
+      }
+  </tbody>
+</table>
